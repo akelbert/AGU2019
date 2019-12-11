@@ -1,0 +1,13 @@
+Menti.com – great tool to quickly assess the ideas in the room.
+
+git config --global user.name "Anna Kelbert"
+git config --global user.email myusgsemail@usgs.gov
+
+git commit
+enters vi
+exit: esc, then :q! (to really quit)
+edit: i (to edit), then esc, then :wq (to save and quit)
+
+git log
+
+git push – to send to repository
