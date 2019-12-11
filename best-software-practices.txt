@@ -1,8 +1,12 @@
 Menti.com – great tool to quickly assess the ideas in the room.
 
+https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745
+
 git config --global user.name "Anna Kelbert"
 git config --global user.email myusgsemail@usgs.gov
 
+git status
+git add myfile
 git commit
 enters vi
 exit: esc, then :q! (to really quit)
@@ -11,3 +15,82 @@ edit: i (to edit), then esc, then :wq (to save and quit)
 git log
 
 git push – to send to repository
+
+To propose edits to a repository I don't control: 
+1) Fork it on github
+2) git clone https://github.com/akelbert/AGU19Demo.git AGU2019-buddy
+3) Edit
+4) Create a new branch! git checkout -b my-personal-branch-name
+5) git add myfile; git status
+6) git commit; git log
+7) git push --set-upstream origin anna-branch
+8) "Compare and pull request" on github
+
+git checkout master
+git pull
+git fetch (copy only the relevant changes into an existing repository)
+
+pull request allows the Maintainer to edit your branch. Then any 
+collaborative edits get integrated into the pull request and may then 
+be quickly integrated into the master once the pull request is approved.
+
+On github, can protect the master branch but give people access 
+to the repository. E.g. write access but not administrative access.
+
+Automatic monthly newsletter that describes all contributions:
+https://github.com/gassmoeller/aspect_newsletter
+
+Include code of conduct in a CONTRIBUTING.md file at master branch.
+Examples:
+geodynamics/aspect/blob/master/CONTRIBUTING.md
+https://www.contributor-covenant.org/
+
+In github, go to Insights -> Community for some useful hints (also JOSS).
+choosealicense.com
+opensource.org/licenses
+GPL commonly avoided; MIT or BSD standard for Python community.
+https://creativecommons.org/use-remix/cc-licenses/ more applicable to text,
+less to software.
+
+Testing and refactoring, continuous integration
+
+In python, "assertTrue" issues an error if a test fails.
+unittest/pytest run the "test" functions for you
+For compiled languates, 
+1) use the test structure similar to geodynamicsa/aspect, or
+2) wrap into python and use pytest.
+
+travis-ci.org
+circleci.com - very similar to travis-ci but private repos are free
+
+Testing in Python:
+https://docs.pytest.org
+Continuous Integration:
+Travis CI: https://travis-ci.org 
+Circle CI: https://circleci.com 
+Azure: https://azure.microsoft.com/en-us/services/devops/test-plans 
+Appveyor: https://www.appveyor.com 
+Example Configurations:
+https://github.com/fatiando/continuous-integration 
+
+Alternative: Jenkins allows you to install a similar environment
+on a local machine (with Docker). Used in Aspect.
+https://jenkins.io/download/
+
+codecov/example-fortran 
+1) create a ".travis.yml" file
+2) create an "environment.yml" file
+
+Go to travis-ci.org and set up cron jobs there. Travis-CI runs tests on 
+their machines. Free for public repos on github/gitlab.
+
+Documentation anatomy:
+
+Overview (target audience, goals/vision, etc)
+Install instructions
+Getting started
+Gallery (short and simple; what exists at a glance)
+Tutorials (long and detailed, how to do specific things, pitfalls, best practices)
+Reference Guide (list of all functions/classes/modules and their documentations)
+Citation (ask to cite and tell people how to do it)
+Links (GitHub, forum, chat, license, code of conduct, etc)
